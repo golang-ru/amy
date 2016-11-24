@@ -12,3 +12,7 @@ build:
 setup:
 	go get -u github.com/govend/govend
 	govend -v
+
+.PHONY: run
+run: build
+	./${BINARY}
