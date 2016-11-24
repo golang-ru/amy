@@ -3,13 +3,16 @@ package handler
 import (
 	"fmt"
 	"time"
+
+	"github.com/golang-ru/amy/service"
 )
 
 type Jobber struct {
+	Services service.IService
 }
 
-func NewJobber() *Jobber {
-	return &Jobber{}
+func NewJobber(services service.IService) *Jobber {
+	return &Jobber{Services: services}
 }
 
 func (j Jobber) Run() error {
